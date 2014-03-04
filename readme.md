@@ -5,7 +5,7 @@ A plugin for ReSharper 8 that allows you to quickly navigate between XAML Views/
 
 For example, navigating from `CustomerDetailsView` to `CustomerDetailsViewModel` by pressing the [Go to Related Files](http://www.jetbrains.com/resharper/webhelp/Navigation_and_Search__Go_to_Related_Files.html) shortcut (`Ctrl+Shift+Alt+G`).
 
-![Go to Related - View to ViewMode][1]
+![Go to Related - View to ViewMode][1]&nbsp;
 ![Go to Related - ViewModel to View][2]
 
 ---
