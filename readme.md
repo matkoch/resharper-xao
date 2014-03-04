@@ -13,7 +13,7 @@ For example, navigating from `CustomerDetailsView` to `CustomerDetailsViewModel`
 
 ReSharper 8.1 or later required.
 
-Icon [3d Model](http://thenounproject.com/term/3d-model/20737/) (CC BY 3.0) designed by Jos� Sanmart�n Gonz�lez from the [Noun Project](http://www.thenounproject.com)
+Icon [3d Model](http://thenounproject.com/term/3d-model/20737/) (CC BY 3.0) designed by José Sanmartín González from the [Noun Project](http://www.thenounproject.com)
 
 ---
 
