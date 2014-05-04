@@ -51,15 +51,17 @@ namespace ReSharper.Xao
             IEnumerable<IProjectFile> projectFiles = elements.Select(declaration => declaration.GetSourceFile().ToProjectFile());
 
             var rval = new List<JetTuple<IProjectFile, string, IProjectFile>>();
-            foreach (var file in projectFiles.OfType<ProjectFileImpl>())
+            foreach (var file in projectFiles.OfType<ProjectFileImpl>().Distinct(pf => pf.Location.FullPath))
             {
-                // Remove all extensions.
+                // Remove all extensions (e.g.: .xaml.cs).
                 var fn = file.Name;
-                while (fn.Contains('.'))
-                    fn = Path.GetFileNameWithoutExtension(fn);
+                var dotPos = fn.IndexOf('.');
+                if (dotPos != -1)
+                    fn = fn.Substring(0, dotPos);
                 var display = fn.EndsWith("ViewModel") ? "ViewModel" : "View";
-
+                
                 var tuple = JetTuple.Of((IProjectFile)file, display, projectFile);
+                
                 rval.Add(tuple);
             }
 
@@ -83,6 +85,14 @@ namespace ReSharper.Xao
                         var candidate = baseName + suffix;
                         candidates.Add(candidate);
                     }
+
+                    // Add base if it ends in one of the view suffixes.
+                    foreach (var suffix in ViewSuffixes)
+                        if (baseName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
+                        {
+                            candidates.Add(baseName);
+                            break;
+                        }
                 }
 
                 foreach (var suffix in ViewSuffixes)
