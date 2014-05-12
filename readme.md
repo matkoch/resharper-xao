@@ -8,6 +8,8 @@ For example, navigating from `CustomerDetailsView` to `CustomerDetailsViewModel`
 ![Go to Related - View to ViewMode][1]&nbsp;
 ![Go to Related - ViewModel to View][2]
 
+**Thanks to [Arieh Ben-Horesh](https://twitter.com/ArielBH) for the idea!**
+
 ---
 To install, simply get [**ReSharper.Xao**](https://resharper-plugins.jetbrains.com/packages/ReSharper.Xao) package from ReSharper's [Extensions Gallery](http://resharper-plugins.jetbrains.com/).
 
