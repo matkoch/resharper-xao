@@ -84,19 +84,13 @@ namespace ReSharper.Xao
                 {
                     // Remove ViewModel from end and add all the possible suffixes.
                     var baseName = typeName.Substring(0, typeName.Length - 9);
-                    foreach (var suffix in ViewSuffixes)
-                    {
-                        var candidate = baseName + suffix;
-                        candidates.Add(candidate);
-                    }
+                    candidates.AddRange(ViewSuffixes.Select(suffix => baseName + suffix));
 
                     // Add base if it ends in one of the view suffixes.
-                    foreach (var suffix in ViewSuffixes)
-                        if (baseName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase))
-                        {
-                            candidates.Add(baseName);
-                            break;
-                        }
+                    if (ViewSuffixes.Any(suffix => baseName.EndsWith(suffix, StringComparison.OrdinalIgnoreCase)))
+                    {
+                        candidates.Add(baseName);
+                    }
                 }
 
                 foreach (var suffix in ViewSuffixes)
