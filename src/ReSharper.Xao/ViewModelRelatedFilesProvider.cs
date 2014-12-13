@@ -4,7 +4,11 @@ using System.IO;
 using System.Linq;
 using JetBrains.Metadata.Reader.API;
 using JetBrains.ProjectModel;
+using JetBrains.ReSharper.Feature.Services.Navigation;
+#if SDK90
+#else
 using JetBrains.ReSharper.Feature.Services.Navigation.GoToRelated;
+#endif
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.Tree;
