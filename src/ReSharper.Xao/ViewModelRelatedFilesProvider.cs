@@ -29,7 +29,7 @@ namespace ReSharper.Xao
 
             var candidateTypeNames = GetTypeCandidates(typeNamesInFile);
 
-            // Look for the candidate types throught the solution.
+            // Look for the candidate types in the solution.
             var solution = projectFile.GetSolution();
             var candidateTypes = new List<IClrDeclaredElement>();
             foreach (var candidateTypeName in candidateTypeNames)
