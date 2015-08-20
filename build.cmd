@@ -1,12 +1,11 @@
 @echo off
-set package_id="ReSharper.Xao"
 
 set config=%1
 if "%config%" == "" (
    set config=Release
 )
  
-set version=0.2.0
+set version=0.3.0
 if not "%PackageVersion%" == "" (
    set version=%PackageVersion%
 )
@@ -17,7 +16,7 @@ if "%nuget%" == "" (
 )
 
 %nuget% restore src\ReSharper.Xao.sln
-%WINDIR%\Microsoft.NET\Framework\v4.0.30319\msbuild src\ReSharper.Xao.sln /t:Rebuild /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Minimal /nr:false
+"%ProgramFiles(x86)%\MSBuild\14.0\Bin\msbuild" src\ReSharper.Xao.sln /t:Rebuild /p:Configuration="%config%" /m /v:M /fl /flp:LogFile=msbuild.log;Verbosity=Normal /nr:false
 
-%nuget% pack "src\plugin.nuspec" -NoPackageAnalysis -Version %version% -Properties "Configuration=%config%;ReSharperDep=ReSharper;ReSharperVer=[8.1,8.3);PackageId=%package_id%"
-%nuget% pack "src\plugin.R90.nuspec" -NoPackageAnalysis -Version %version% -Properties "Configuration=%config%;ReSharperDep=Wave;ReSharperVer=[2.0];PackageId=%package_id%.R90"
+set package_id="ReSharper.Xao"
+%nuget% pack "src\ReSharper.Xao.nuspec" -NoPackageAnalysis -Version %version% -Properties "Configuration=%config%;ReSharperDep=Wave;ReSharperVer=[3.0];PackageId=%package_id%"

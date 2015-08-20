@@ -14,13 +14,13 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     <iconUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/logo.png</iconUrl>
     <copyright>Copyright &#x00A9; 2014-2015 Igal Tabachnik</copyright>
     <tags>xaml viewmodel mvvm navigate view model</tags>
-    <releaseNotes>ReSharper 9 support</releaseNotes>
+    <releaseNotes>ReSharper 9.2 support</releaseNotes>
     <dependencies>
       <dependency id="$ReSharperDep$" version="$ReSharperVer$" />
     </dependencies>
   </metadata>
   <files>
-    <file src="..\output\$configuration$\8.1\*.*" target="ReSharper\v8.1\plugins"/>
-    <file src="..\output\$configuration$\8.2\*.*" target="ReSharper\v8.2\plugins"/>
+    <file src="..\output\$configuration$\9.0\ReSharper.Xao.dll" target="dotFiles"/>
+    <file src="..\output\$configuration$\9.0\ReSharper.Xao.pdb" target="dotFiles"/>
   </files>
 </package>
