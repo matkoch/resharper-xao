@@ -5,10 +5,6 @@ using System.Linq;
 using JetBrains.Metadata.Reader.API;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.Navigation;
-#if SDK90
-#else
-using JetBrains.ReSharper.Feature.Services.Navigation.GoToRelated;
-#endif
 using JetBrains.ReSharper.Psi;
 using JetBrains.ReSharper.Psi.Caches;
 using JetBrains.ReSharper.Psi.Tree;
@@ -126,7 +122,7 @@ namespace ReSharper.Xao
         private static List<IClrDeclaredElement> FindType(ISolution solution, string typeToFind)
         {
             ISymbolScope declarationsCache = solution.GetPsiServices().Symbols
-                .GetSymbolScope(LibrarySymbolScope.FULL, context: UniversalModuleReferenceContext.Instance, caseSensitive: false);
+                .GetSymbolScope(LibrarySymbolScope.FULL, false);
 
             List<IClrDeclaredElement> results = declarationsCache.GetElementsByShortName(typeToFind).ToList();
             return results;
