@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using JetBrains.Metadata.Reader.API;
 using JetBrains.ProjectModel;
 using JetBrains.ReSharper.Feature.Services.Navigation;
 using JetBrains.ReSharper.Psi;
@@ -19,7 +17,7 @@ namespace ReSharper.Xao
     {
         private static readonly string[] ViewSuffixes = { "View", "Flyout", "UserControl", "Page" };
 
-        public IEnumerable<JetTuple<IProjectFile, string, IProjectFile>> GetRelatedFiles(IProjectFile projectFile)
+        public IEnumerable<Tuple<IProjectFile, string, IProjectFile>> GetRelatedFiles(IProjectFile projectFile)
         {
             var typeNamesInFile = GetTypeNamesDefinedInFile(projectFile).ToList();
 
@@ -50,7 +48,7 @@ namespace ReSharper.Xao
             var elements = elementCollector.GetResults();
             IEnumerable<IProjectFile> projectFiles = elements.Select(declaration => declaration.GetSourceFile().ToProjectFile());
 
-            var rval = new List<JetTuple<IProjectFile, string, IProjectFile>>();
+            var rval = new List<Tuple<IProjectFile, string, IProjectFile>>();
             foreach (var file in projectFiles.OfType<ProjectFileImpl>().Distinct(pf => pf.Location.FullPath))
             {
                 // Remove all extensions (e.g.: .xaml.cs).
@@ -60,7 +58,7 @@ namespace ReSharper.Xao
                     fn = fn.Substring(0, dotPos);
                 var display = fn.EndsWith("ViewModel") ? "ViewModel" : "View";
                 
-                var tuple = JetTuple.Of((IProjectFile)file, display, projectFile);
+                var tuple = Tuple.Create((IProjectFile)file, display, projectFile);
                 
                 rval.Add(tuple);
             }

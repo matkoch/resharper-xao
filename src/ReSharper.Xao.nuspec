@@ -12,9 +12,9 @@
 For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and vice-versa, by pressing the Go to Related Files shortcut (Ctrl+Shift+Alt+G).</description>
     <projectUrl>https://github.com/hmemcpy/ReSharper.Xao</projectUrl>
     <iconUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/logo.png</iconUrl>
-    <copyright>Copyright &#x00A9; 2014-2015 Igal Tabachnik</copyright>
+    <copyright>Copyright &#x00A9; 2014-2016 Igal Tabachnik</copyright>
     <tags>xaml viewmodel mvvm navigate view model</tags>
-    <releaseNotes>ReSharper 102 support</releaseNotes>
+    <releaseNotes>ReSharper 2016.1 support</releaseNotes>
     <dependencies>
       <dependency id="$ReSharperDep$" version="$ReSharperVer$" />
     </dependencies>
