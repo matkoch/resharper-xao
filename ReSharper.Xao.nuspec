@@ -20,7 +20,7 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     </dependencies>
   </metadata>
   <files>
-    <file src="..\output\$configuration$\10.0\ReSharper.Xao.dll" target="dotFiles"/>
-    <file src="..\output\$configuration$\10.0\ReSharper.Xao.pdb" target="dotFiles"/>
+    <file src="bin\default\$configuration$\ReSharper.Xao.dll" target="dotFiles"/>
+    <file src="bin\default\$configuration$\ReSharper.Xao.pdb" target="dotFiles"/>
   </files>
 </package>
