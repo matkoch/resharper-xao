@@ -1,7 +1,3 @@
-## Update
-**As of August 9, 2016, this project is no longer maintained. If you're interested in becoming its maintainer, please drop me a line.**
-
-
 <div style="float: right"><img src="/logo.png" /></div>Xao - Navigate between XAML View and ViewModel files
 ===
 

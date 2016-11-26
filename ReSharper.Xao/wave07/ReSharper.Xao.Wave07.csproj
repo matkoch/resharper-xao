@@ -8,7 +8,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{785F7B92-C2C3-48FA-AE99-9F26BEFC1B57}</ProjectGuid>
+    <ProjectGuid>{75964F8A-0476-451D-9968-47834A2B6E3B}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ReSharper.Xao</RootNamespace>
@@ -17,7 +17,7 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <OutputPath>..\..\bin\default\$(Configuration)\</OutputPath>
-    <BaseIntermediateOutputPath>..\..\obj\default\</BaseIntermediateOutputPath>
+    <BaseIntermediateOutputPath>..\..\obj\wave07\</BaseIntermediateOutputPath>
     <StartAction>Program</StartAction>
     <StartProgram>$(DevEnvDir)\devenv.exe</StartProgram>
     <StartArguments>/rootsuffix ReSharper /ReSharper.Internal</StartArguments>

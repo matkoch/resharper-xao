@@ -3,8 +3,8 @@
   <metadata>
     <id>$PackageId$</id>
     <version>$version$</version>
-    <authors>Igal Tabachnik</authors>
-    <owners>Igal Tabachnik</owners>
+    <authors>Igal Tabachnik, Andrew Karpov</authors>
+    <owners>Igal Tabachnik, Andrew Karpov</owners>
     <title>Xao - Navigate between a XAML View and ViewModel.</title>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <licenseUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/license.txt</licenseUrl>
@@ -14,7 +14,7 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     <iconUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/logo.png</iconUrl>
     <copyright>Copyright &#x00A9; 2014-2016 Igal Tabachnik</copyright>
     <tags>xaml viewmodel mvvm navigate view model</tags>
-    <releaseNotes>ReSharper 2016.1 support</releaseNotes>
+    <releaseNotes>ReSharper 2016.3 EAP support</releaseNotes>
     <dependencies>
       <dependency id="$ReSharperDep$" version="$ReSharperVer$" />
     </dependencies>
