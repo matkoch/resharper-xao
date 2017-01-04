@@ -10,7 +10,7 @@ using JetBrains.Util;
 
 namespace ReSharper.Xao
 {
-    // Comment the RelatedFilesProvider attribute before opening the file.  Its presence 
+    // Comment the RelatedFilesProvider attribute before opening the file.  Its presence
     // somehow causes the editor to go nuts.
     [RelatedFilesProvider(typeof(KnownProjectFileType))]
     public class ViewModelRelatedFilesProvider : IRelatedFilesProvider
@@ -48,6 +48,8 @@ namespace ReSharper.Xao
             var elements = elementCollector.GetResults();
             IEnumerable<IProjectFile> projectFiles = elements.Select(declaration => declaration.GetSourceFile().ToProjectFile());
 
+            var thisProjectName = GetProjectName(projectFile);
+
             var rval = new List<Tuple<IProjectFile, string, IProjectFile>>();
             foreach (var file in projectFiles.OfType<ProjectFileImpl>().Distinct(pf => pf.Location.FullPath))
             {
@@ -55,15 +57,35 @@ namespace ReSharper.Xao
                 var fn = file.Name;
                 var dotPos = fn.IndexOf('.');
                 if (dotPos != -1)
+                {
                     fn = fn.Substring(0, dotPos);
+                }
+
                 var display = fn.EndsWith("ViewModel") ? "ViewModel" : "View";
-                
+
+                var projectName = GetProjectName(file);
+
+                if (projectName != thisProjectName)
+                {
+                    display += $" ({projectName})";
+                }
+
                 var tuple = Tuple.Create((IProjectFile)file, display, projectFile);
-                
+
                 rval.Add(tuple);
             }
 
             return rval;
+        }
+
+        private static string GetProjectName(IProjectItem projectItem)
+        {
+            while (!(projectItem is IProject))
+            {
+                projectItem = projectItem.ParentFolder;
+            }
+
+            return ((IProject)projectItem).Name;
         }
 
         private IEnumerable<string> GetTypeCandidates(IEnumerable<string> typeNamesInFile)
