@@ -46,9 +46,9 @@ namespace ReSharper.Xao
                     elementCollector.ProcessElement(file);
 
             var elements = elementCollector.GetResults();
-            IEnumerable<IProjectFile> projectFiles = elements.Select(declaration => declaration.GetSourceFile().ToProjectFile());
+            var projectFiles = elements.Select(declaration => declaration.GetSourceFile().ToProjectFile());
 
-            var thisProjectName = GetProjectName(projectFile);
+            var thisProjectName = projectFile.GetProject()?.Name;
 
             var rval = new List<Tuple<IProjectFile, string, IProjectFile>>();
             foreach (var file in projectFiles.OfType<ProjectFileImpl>().Distinct(pf => pf.Location.FullPath))
@@ -63,11 +63,12 @@ namespace ReSharper.Xao
 
                 var display = fn.EndsWith("ViewModel") ? "ViewModel" : "View";
 
-                var projectName = GetProjectName(file);
+                var projectName = file.GetProject()?.Name;
 
-                if (projectName != thisProjectName)
+                if (projectName != null &&
+                    !string.Equals(thisProjectName, projectName, StringComparison.OrdinalIgnoreCase))
                 {
-                    display += $" ({projectName})";
+                    display += $" (in {projectName})";
                 }
 
                 var tuple = Tuple.Create((IProjectFile)file, display, projectFile);
@@ -76,16 +77,6 @@ namespace ReSharper.Xao
             }
 
             return rval;
-        }
-
-        private static string GetProjectName(IProjectItem projectItem)
-        {
-            while (!(projectItem is IProject))
-            {
-                projectItem = projectItem.ParentFolder;
-            }
-
-            return ((IProject)projectItem).Name;
         }
 
         private IEnumerable<string> GetTypeCandidates(IEnumerable<string> typeNamesInFile)
