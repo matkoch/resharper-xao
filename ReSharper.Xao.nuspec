@@ -14,7 +14,9 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     <iconUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/logo.png</iconUrl>
     <copyright>Copyright &#x00A9; 2014-2017 Igal Tabachnik</copyright>
     <tags>xaml viewmodel mvvm navigate view model</tags>
-    <releaseNotes>ReSharper 2016.3 support</releaseNotes>
+    <releaseNotes>
+        Show project names for candidates in different projects (by TeaDrivenDev)
+    </releaseNotes>
     <dependencies>
       <dependency id="$ReSharperDep$" version="$ReSharperVer$" />
     </dependencies>
