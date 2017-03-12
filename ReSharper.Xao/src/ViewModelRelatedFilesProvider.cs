@@ -10,8 +10,6 @@ using JetBrains.Util;
 
 namespace ReSharper.Xao
 {
-    // Comment the RelatedFilesProvider attribute before opening the file.  Its presence
-    // somehow causes the editor to go nuts.
     [RelatedFilesProvider(typeof(KnownProjectFileType))]
     public class ViewModelRelatedFilesProvider : IRelatedFilesProvider
     {

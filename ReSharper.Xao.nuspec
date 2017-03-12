@@ -15,7 +15,7 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     <copyright>Copyright &#x00A9; 2014-2017 Igal Tabachnik</copyright>
     <tags>xaml viewmodel mvvm navigate view model</tags>
     <releaseNotes>
-        Show project names for candidates in different projects (by TeaDrivenDev)
+        2016.3.1 Show project names for candidates in different projects (by TeaDrivenDev)
     </releaseNotes>
     <dependencies>
       <dependency id="$ReSharperDep$" version="$ReSharperVer$" />
