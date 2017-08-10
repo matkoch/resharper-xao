@@ -3,8 +3,8 @@ using JetBrains.ReSharper.Feature.Services.Navigation;
 
 namespace ReSharper.Xao
 {
-    [ZoneMarker]
-    public class ZoneMarker : IRequire<NavigationZone>
-    {
-    }
+  [ZoneMarker]
+  public class ZoneMarker : IRequire<NavigationZone>
+  {
+  }
 }
