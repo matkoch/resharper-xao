@@ -20,19 +20,17 @@ namespace ReSharper.Xao
     {
       var typeNamesInFile = GetTypeNamesDefinedInFile(projectFile).ToList();
 
-      var candidateTypeNames = GetTypeCandidates(typeNamesInFile);
-
       // Look for the candidate types in the solution.
       var solution = projectFile.GetSolution();
-      var candidateTypes = new List<IClrDeclaredElement>();
-      foreach (var candidateTypeName in candidateTypeNames)
+      var candidateTypes = new LocalList<IClrDeclaredElement>();
+      foreach (var candidateTypeName in GetTypeCandidates(typeNamesInFile))
       {
-        var types = FindType(solution, candidateTypeName);
+        var types = FindTypesByShortName(solution, candidateTypeName);
         candidateTypes.AddRange(types);
       }
 
       // Get the source files for each of the candidate types.
-      var sourceFiles = new List<IPsiSourceFile>();
+      var sourceFiles = new LocalList<IPsiSourceFile>();
       foreach (var type in candidateTypes)
       {
         var sourceFilesForCandidateType = type.GetSourceFiles();
@@ -51,7 +49,7 @@ namespace ReSharper.Xao
 
       var thisProjectName = projectFile.GetProject()?.Name;
 
-      var occurences = new List<RelatedFileOccurence>();
+      var occurences = new LocalList<RelatedFileOccurence>();
 
       foreach (var file in projectFiles.OfType<ProjectFileImpl>().Distinct(x => x.Location.FullPath))
       {
@@ -63,20 +61,20 @@ namespace ReSharper.Xao
           fileName = fileName.Substring(0, dotPos);
         }
 
-        var display = fileName.EndsWith("ViewModel") ? "ViewModel" : "View";
+        var relationKind = fileName.EndsWith("ViewModel") ? "ViewModel" : "View";
 
         var projectName = file.GetProject()?.Name;
 
         if (projectName != null &&
             !string.Equals(thisProjectName, projectName, StringComparison.OrdinalIgnoreCase))
         {
-          display += $" (in {projectName})";
+          relationKind += $" (in {projectName})";
         }
 
-        occurences.Add(new RelatedFileOccurence(file, display, projectFile));
+        occurences.Add(new RelatedFileOccurence(file, relationKind, projectFile));
       }
 
-      return occurences;
+      return occurences.ReadOnlyList();
     }
 
     [NotNull, Pure]
@@ -134,12 +132,12 @@ namespace ReSharper.Xao
     }
 
     [NotNull, Pure]
-    private static List<IClrDeclaredElement> FindType([NotNull] ISolution solution, [NotNull] string typeToFind)
+    private static List<IClrDeclaredElement> FindTypesByShortName([NotNull] ISolution solution, [NotNull] string shortTypeName)
     {
       var symbolCache = solution.GetPsiServices().Symbols;
       var symbolScope = symbolCache.GetSymbolScope(LibrarySymbolScope.FULL, caseSensitive: false);
 
-      return symbolScope.GetElementsByShortName(typeToFind).ToList();
+      return symbolScope.GetElementsByShortName(shortTypeName).ToList();
     }
   }
 }
