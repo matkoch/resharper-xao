@@ -1,5 +1,4 @@
-﻿<Project>
-  <Import Project="Sdk.props" Sdk="Microsoft.NET.Sdk" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <ReSharperVersionIdentifier>20172</ReSharperVersionIdentifier>
     <TargetFramework>net45</TargetFramework>
@@ -29,7 +28,6 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2017.2.0-eap11" />
+    <PackageReference Include="JetBrains.ReSharper.SDK" Version="2017.2.0-eap13" />
   </ItemGroup>
-  <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
 </Project>
