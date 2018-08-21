@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReSharper.Xao", "ReSharper.Xao\ReSharper.Xao.csproj", "{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = ".build", "..\build\.build.csproj", "{ECD851CE-FE9E-4812-8658-A63758D5102B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{E2E15476-F623-41C3-A26A-50036CBB654D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,8 +17,6 @@ Global
 		{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ECD851CE-FE9E-4812-8658-A63758D5102B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ECD851CE-FE9E-4812-8658-A63758D5102B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
