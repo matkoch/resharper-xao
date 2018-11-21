@@ -5,14 +5,14 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <RootNamespace></RootNamespace>
-    <IsPackable>False</IsPackable>
     <NoWarn>CS0649;CS0169</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="NuGet.CommandLine" Version="4.7.1" />
-    <PackageReference Include="Nuke.Common" Version="0.6.2" />
-    <PackageReference Include="GitVersion.CommandLine" Version="4.0.0-beta0011" />
+    <PackageReference Include="Nuke.Common" Version="0.10.*" />
+    <PackageReference Include="GitVersion.CommandLine" Version="*" />
+        <PackageReference Include="xunit.runner.console" Version="*" />
   </ItemGroup>
 
   <ItemGroup>
