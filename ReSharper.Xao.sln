@@ -3,9 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReSharper.Xao", "ReSharper.Xao\ReSharper.Xao.csproj", "{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReSharper.Xao", "src\ReSharper.Xao\ReSharper.Xao.csproj", "{2615BF73-7B74-4F41-AB7B-9C9BD644B85A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "..\build\_build.csproj", "{E2E15476-F623-41C3-A26A-50036CBB654D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "_build", "build\_build.csproj", "{E2E15476-F623-41C3-A26A-50036CBB654D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{62BEE965-115F-4521-B509-748A729B123D}"
+ProjectSection(SolutionItems) = preProject
+	.gitattributes = .gitattributes
+	.gitignore = .gitignore
+	CHANGELOG.md = CHANGELOG.md
+	LICENSE = LICENSE
+	readme.md = readme.md
+	install\ReSharper.Xao.nuspec = install\ReSharper.Xao.nuspec
+EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

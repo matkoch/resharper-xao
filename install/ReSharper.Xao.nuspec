@@ -20,6 +20,6 @@ For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and
     </dependencies>
   </metadata>
   <files>
-    <file src="ReSharper.Xao\bin\$configuration$\ReSharper.Xao.*" target="dotFiles"/>
+    <file src="src\ReSharper.Xao\bin\$configuration$\ReSharper.Xao.*" target="dotFiles"/>
   </files>
 </package>
