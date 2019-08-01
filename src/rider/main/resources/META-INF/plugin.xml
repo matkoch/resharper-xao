@@ -1,0 +1,15 @@
+<idea-plugin>
+  <id>xao-rider</id>
+  <name>Xao</name>
+  <version>_PLACEHOLDER_</version>
+  <vendor url="https://github.com/hmemcpy/ReSharper.Xao/">Igal Tabachnik</vendor>
+  <idea-version since-build="_PLACEHOLDER_" until-build="_PLACEHOLDER_" />
+  <depends>com.intellij.modules.rider</depends>
+
+  <description>
+<![CDATA[
+<p>A plugin that allows you to quickly navigate between XAML Views/CodeBehind and the corresponding ViewModel files, based on naming convention.
+      For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and vice-versa, by pressing the Go to Related Files shortcut (Ctrl+Shift+Alt+G).</p>
+]]>
+  </description>
+</idea-plugin>

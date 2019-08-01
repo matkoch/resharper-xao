@@ -1,0 +1,17 @@
+<Project>
+  <PropertyGroup>
+    <SdkVersion>2019.1.0-*</SdkVersion>
+    
+    <Title>Xao - Navigate between a XAML View and ViewModel</Title>
+    <Description>A plugin that allows you to quickly navigate between XAML Views/CodeBehind and the corresponding ViewModel files, based on naming convention.
+      For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and vice-versa, by pressing the Go to Related Files shortcut (Ctrl+Shift+Alt+G).</Description>
+  
+    <Authors>Igal Tabachnik, Andrew Karpov</Authors>
+    <Copyright>Copyright $([System.DateTime]::Now.Year) Igal Tabachnik</Copyright>
+    <PackageTags>resharper plugin xaml viewmodel mvvm navigate view model</PackageTags>
+  
+    <PackageProjectUrl>https://github.com/hmemcpy/ReSharper.Xao</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/hmemcpy/ReSharper.Xao/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageIconUrl>https://raw.github.com/hmemcpy/ReSharper.Xao/master/logo.png</PackageIconUrl>
+  </PropertyGroup>
+</Project>
