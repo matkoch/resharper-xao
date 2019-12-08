@@ -12,4 +12,5 @@
       For example, navigating from CustomerDetailsView to CustomerDetailsViewModel and vice-versa, by pressing the Go to Related Files shortcut (Ctrl+Shift+Alt+G).</p>
 ]]>
   </description>
+
 </idea-plugin>

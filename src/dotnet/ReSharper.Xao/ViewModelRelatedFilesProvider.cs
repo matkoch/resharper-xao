@@ -34,7 +34,7 @@ namespace ReSharper.Xao
       foreach (var type in candidateTypes)
       {
         var sourceFilesForCandidateType = type.GetSourceFiles();
-        sourceFiles.AddRange(sourceFilesForCandidateType);
+        sourceFiles.AddRange(sourceFilesForCandidateType.ResultingList());
       }
 
       var elementCollector = new RecursiveElementCollector<ITypeDeclaration>();
