@@ -1,6 +1,5 @@
-$PSScriptRoot = Split-Path $MyInvocation.MyCommand.Path -Parent
 $PluginId = "ReSharperPlugin.Xao"
-$SolutionPath = "$PSScriptRoot\Xao.sln"
+$SolutionPath = "$PSScriptRoot\ReSharperPlugin.Xao.sln"
 $SourceBasePath = "$PSScriptRoot\src\dotnet"
 
 $VsWhereOutput = [xml] (& "$PSScriptRoot\tools\vswhere.exe" -format xml)

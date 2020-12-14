@@ -4,7 +4,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-# 2020.2.1
+## vNext
+
+## [2020.3.0] / 2020-12-14
+- Added support for ReSharper and Rider 2020.3
+
+## 2020.2.1
 - Fixed plugin to signal that IDE restart is required
 
 ## 2020.2.0
@@ -36,7 +41,4 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## 2017.3.0
 - Support for ReSharper 2017.3
-
-## Previous releases
-- Show project names for candidates in different projects (by TeaDrivenDev)
 
