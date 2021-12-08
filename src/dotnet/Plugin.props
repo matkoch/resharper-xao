@@ -1,6 +1,6 @@
 ﻿<Project>
   <PropertyGroup>
-    <SdkVersion>2021.3.0-eap01</SdkVersion>
+    <SdkVersion>2021.3.0</SdkVersion>
 
     <Title>Xao - Navigate between a XAML View and ViewModel</Title>
     <Description>A plugin that allows you to quickly navigate between XAML Views/CodeBehind and the corresponding ViewModel files, based on naming convention.
