@@ -17,6 +17,6 @@ pluginManagement {
     }
 }
 
-rootProject.name = 'xao'
+rootProject.name = 'ReSharperPlugin.Xao'
 
 include ':protocol'
